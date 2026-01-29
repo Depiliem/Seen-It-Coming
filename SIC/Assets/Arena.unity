@@ -776,7 +776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserPrefab: {fileID: 858781865132401743, guid: 5e074b24722a49e4884d106f66866663, type: 3}
-  warningPrefab: {fileID: 919132149155446097, guid: f8e87fc0b96d4d1479941586e3224b45, type: 3}
+  warningPrefab: {fileID: 858781865132401743, guid: 6c82d7a1045776d4b91dd388905f7e8d, type: 3}
   spawnInterval: 3
   warningTime: 1.5
   minX: -5

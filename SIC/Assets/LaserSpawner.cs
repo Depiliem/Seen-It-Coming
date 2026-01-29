@@ -29,13 +29,17 @@ public class LaserSpawner : MonoBehaviour
 
     IEnumerator SpawnWithWarning(Vector3 pos)
     {
-        GameObject warning = Instantiate(warningPrefab, pos, Quaternion.identity);
+        float randomAngle = Random.Range(0f, 360f);
+        Quaternion rot = Quaternion.Euler(0f, randomAngle, 0f);
+
+        GameObject warning = Instantiate(warningPrefab, pos, rot);
 
         yield return new WaitForSeconds(warningTime);
 
         Destroy(warning);
-        Instantiate(laserPrefab, pos, Quaternion.identity);
+        Instantiate(laserPrefab, pos, rot);
     }
+
 
     void IncreaseDifficulty()
     {
