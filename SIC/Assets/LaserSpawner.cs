@@ -30,14 +30,33 @@ public class LaserSpawner : MonoBehaviour
     IEnumerator SpawnWithWarning(Vector3 pos)
     {
         float randomAngle = Random.Range(0f, 360f);
-        Quaternion rot = Quaternion.Euler(0f, randomAngle, 0f);
 
-        GameObject warning = Instantiate(warningPrefab, pos, rot);
+        // spawn warning TANPA rotasi
+        GameObject warning = Instantiate(
+            warningPrefab,
+            pos,
+            Quaternion.identity
+        );
+
+        // rebahkan cylinder
+        warning.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+
+        // putar arah laser (WORLD SPACE)
+        warning.transform.Rotate(Vector3.up, randomAngle, Space.World);
 
         yield return new WaitForSeconds(warningTime);
 
         Destroy(warning);
-        Instantiate(laserPrefab, pos, rot);
+
+        // spawn laser
+        GameObject laser = Instantiate(
+            laserPrefab,
+            pos,
+            Quaternion.identity
+        );
+
+        laser.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+        laser.transform.Rotate(Vector3.up, randomAngle, Space.World);
     }
 
 
