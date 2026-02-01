@@ -13,20 +13,27 @@ public class LaserSpawner : MonoBehaviour
     public float maxX = 5f;
     public float spawnY = 1f;
 
+    // ======================
+    // TILE SYSTEM
+    // ======================
     GameObject[] pathTiles;
 
     public float tileInterval = 4f;
     public float tileWarningTime = 1.2f;
     public float tileRespawnTime = 5f;
 
+    bool tileSystemActive = false;
+
     void Start()
     {
-        // 🔥 AUTO AMBIL SEMUA TILE
         pathTiles = GameObject.FindGameObjectsWithTag("Lantai");
 
         InvokeRepeating(nameof(SpawnLaser), 1f, spawnInterval);
-        InvokeRepeating(nameof(DespawnRandomTile), 3f, tileInterval);
     }
+
+    // ======================
+    // LASER
+    // ======================
 
     void SpawnLaser()
     {
@@ -54,8 +61,13 @@ public class LaserSpawner : MonoBehaviour
         Destroy(laser, 2f);
     }
 
+    // ======================
+    // TILE DESPAWN
+    // ======================
+
     void DespawnRandomTile()
     {
+        if (!tileSystemActive) return;
         if (pathTiles.Length == 0) return;
 
         GameObject tile = pathTiles[Random.Range(0, pathTiles.Length)];
@@ -80,28 +92,26 @@ public class LaserSpawner : MonoBehaviour
         r.material.color = original;
     }
 
-    void IncreaseDifficulty()
-    {
-        spawnInterval = Mathf.Max(0.8f, spawnInterval - 0.3f);
-        CancelInvoke(nameof(SpawnLaser));
-        InvokeRepeating(nameof(SpawnLaser), 0f, spawnInterval);
+    // ======================
+    // DIFFICULTY CONTROL
+    // ======================
 
-        tileInterval = Mathf.Max(1.5f, tileInterval - 0.3f);
-        CancelInvoke(nameof(DespawnRandomTile));
-        InvokeRepeating(nameof(DespawnRandomTile), 1f, tileInterval);
-    }
-
-    public void ApplyDifficulty(
-    float newLaserInterval,
-    float newTileInterval)
+    public void ApplyDifficulty(float newLaserInterval)
     {
         spawnInterval = newLaserInterval;
-        tileInterval = newTileInterval;
 
         CancelInvoke(nameof(SpawnLaser));
+        InvokeRepeating(nameof(SpawnLaser), 0f, spawnInterval);
+    }
+
+    public void SetTileSystem(bool active, float newTileInterval)
+    {
+        tileSystemActive = active;
+        tileInterval = newTileInterval;
+
         CancelInvoke(nameof(DespawnRandomTile));
 
-        InvokeRepeating(nameof(SpawnLaser), 0f, spawnInterval);
-        InvokeRepeating(nameof(DespawnRandomTile), 1f, tileInterval);
+        if (tileSystemActive)
+            InvokeRepeating(nameof(DespawnRandomTile), 2f, tileInterval);
     }
 }

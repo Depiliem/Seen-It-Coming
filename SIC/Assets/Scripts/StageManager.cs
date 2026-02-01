@@ -5,7 +5,7 @@ public class StageManager : MonoBehaviour
 {
     public LaserSpawner spawner;
 
-    public TMP_Text stagePopupText;
+    public TMP_Text popupText;
     public GameObject popupPanel;
 
     public float stageDuration = 25f;
@@ -15,7 +15,7 @@ public class StageManager : MonoBehaviour
 
     void Start()
     {
-        ApplyStage();
+        ApplyStageSettings();
         ShowPopup();
     }
 
@@ -27,27 +27,34 @@ public class StageManager : MonoBehaviour
         {
             stage++;
             timer = 0f;
-
-            ApplyStage();
+            ApplyStageSettings();
             ShowPopup();
         }
     }
 
-    void ApplyStage()
+    void ApplyStageSettings()
     {
-        // tabel difficulty sederhana
-        float laserInterval = Mathf.Max(0.7f, 3f - stage * 0.4f);
-        float tileInterval  = Mathf.Max(1.2f, 4f - stage * 0.5f);
-
-        spawner.ApplyDifficulty(laserInterval, tileInterval);
+        if (stage == 1)
+        {
+            spawner.ApplyDifficulty(2f);          // laser lambat
+            spawner.SetTileSystem(false, 0f);     // tile aman
+        }
+        else if (stage == 2)
+        {
+            spawner.ApplyDifficulty(1.4f);
+            spawner.SetTileSystem(false, 0f);
+        }
+        else if (stage >= 3)
+        {
+            spawner.ApplyDifficulty(1.0f);
+            spawner.SetTileSystem(true, 3f);      // tile hilang aktif
+        }
     }
 
     void ShowPopup()
     {
         popupPanel.SetActive(true);
-        stagePopupText.text = "STAGE " + stage;
-
-        CancelInvoke(nameof(HidePopup));
+        popupText.text = "STAGE " + stage;
         Invoke(nameof(HidePopup), 2f);
     }
 

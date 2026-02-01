@@ -18396,9 +18396,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 1369487689}
-  stagePopupText: {fileID: 238587767}
+  popupText: {fileID: 238587767}
   popupPanel: {fileID: 468294319}
-  stageDuration: 25
+  stageDuration: 15
 --- !u!4 &1067540118
 Transform:
   m_ObjectHideFlags: 0
