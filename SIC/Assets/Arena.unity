@@ -13718,16 +13718,28 @@ PrefabInstance:
       value: 0.000018344725
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df8e86716d586a24a8a3cb4e76d5b900, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.33
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df8e86716d586a24a8a3cb4e76d5b900, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.33
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df8e86716d586a24a8a3cb4e76d5b900, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.33
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df8e86716d586a24a8a3cb4e76d5b900, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.27
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df8e86716d586a24a8a3cb4e76d5b900, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df8e86716d586a24a8a3cb4e76d5b900, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.47
+      value: 15.82
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df8e86716d586a24a8a3cb4e76d5b900, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13756,6 +13768,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: df8e86716d586a24a8a3cb4e76d5b900, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: df8e86716d586a24a8a3cb4e76d5b900, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8391316874694195593, guid: df8e86716d586a24a8a3cb4e76d5b900, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16389,50 +16405,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 546782691}
   m_SourcePrefab: {fileID: 100100000, guid: f8e87fc0b96d4d1479941586e3224b45, type: 3}
---- !u!1 &984713348
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 984713350}
-  - component: {fileID: 984713349}
-  m_Layer: 0
-  m_Name: Colllidercode
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &984713349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984713348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b4a2f8f8669ee4e99789382cd4f3c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &984713350
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984713348}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 4, z: -20.1}
-  m_LocalScale: {x: 31.29611, y: 59.517242, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1002407678
 Mesh:
   m_ObjectHideFlags: 0
@@ -25101,8 +25073,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0603f393de4e847838e388ab5a44ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserPrefab: {fileID: 858781865132401743, guid: 5e074b24722a49e4884d106f66866663, type: 3}
-  warningPrefab: {fileID: 858781865132401743, guid: 6c82d7a1045776d4b91dd388905f7e8d, type: 3}
+  laserPrefab: {fileID: 1167146078036284564, guid: 5e074b24722a49e4884d106f66866663, type: 3}
+  warningPrefab: {fileID: 4149524095849396659, guid: 6c82d7a1045776d4b91dd388905f7e8d, type: 3}
   spawnInterval: 3
   warningTime: 1.5
   minX: -5
@@ -39407,9 +39379,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2127902842}
-  moveSpeed: 10
+  walkSpeed: 7
+  runSpeed: 12
   rotationSpeed: 10
-  jumpForce: 1
+  jumpForce: 3
   groundCheckDistance: 0.5
 --- !u!54 &2127902845
 Rigidbody:
@@ -39702,7 +39675,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1224249877}
-  - {fileID: 984713350}
   - {fileID: 831890045}
   - {fileID: 1067436838190570364}
   - {fileID: 1369487690}
