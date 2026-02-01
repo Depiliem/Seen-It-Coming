@@ -25,7 +25,6 @@ public class LaserSpawner : MonoBehaviour
         pathTiles = GameObject.FindGameObjectsWithTag("Lantai");
 
         InvokeRepeating(nameof(SpawnLaser), 1f, spawnInterval);
-        InvokeRepeating(nameof(IncreaseDifficulty), 10f, 10f);
         InvokeRepeating(nameof(DespawnRandomTile), 3f, tileInterval);
     }
 
@@ -89,6 +88,20 @@ public class LaserSpawner : MonoBehaviour
 
         tileInterval = Mathf.Max(1.5f, tileInterval - 0.3f);
         CancelInvoke(nameof(DespawnRandomTile));
+        InvokeRepeating(nameof(DespawnRandomTile), 1f, tileInterval);
+    }
+
+    public void ApplyDifficulty(
+    float newLaserInterval,
+    float newTileInterval)
+    {
+        spawnInterval = newLaserInterval;
+        tileInterval = newTileInterval;
+
+        CancelInvoke(nameof(SpawnLaser));
+        CancelInvoke(nameof(DespawnRandomTile));
+
+        InvokeRepeating(nameof(SpawnLaser), 0f, spawnInterval);
         InvokeRepeating(nameof(DespawnRandomTile), 1f, tileInterval);
     }
 }
