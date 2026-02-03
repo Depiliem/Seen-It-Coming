@@ -23,11 +23,11 @@ Material:
   m_Name: laser
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 2100000, guid: bd9dd760062a6b3469dfc7212eae557d, type: 2}
-  m_ModifiedSerializedProperties: 16
+  m_ModifiedSerializedProperties: 18
   m_ValidKeywords:
   - _EMISSION
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -45,6 +45,7 @@ Material:
     - _Surface: 0
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.9245283, g: 0.054076135, b: 0.054076135, a: 1}
-    - _Color: {r: 0.9245283, g: 0.054076113, b: 0.054076113, a: 1}
+    - _BaseColor: {r: 0.54509807, g: 0.067303464, b: 0.067303464, a: 1}
+    - _Color: {r: 0.545098, g: 0.06730344, b: 0.06730344, a: 1}
+    - _EmissionColor: {r: 3.4415908, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
