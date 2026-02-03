@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &33488969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,7 +994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &57645088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1418,7 +1418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &67936139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1842,7 +1842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &70813650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2266,7 +2266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &77827334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3594,7 +3594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &207910084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4018,7 +4018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &220367600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4442,7 +4442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &224399384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6592,7 +6592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &479309832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7366,7 +7366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &546782693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7790,7 +7790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &559339942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9181,7 +9181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &647856909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9780,7 +9780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &666124815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10204,7 +10204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &673193414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11072,7 +11072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &678248782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11977,7 +11977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &744497061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12401,7 +12401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &749980654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14106,7 +14106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &836899653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14902,7 +14902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &890405186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15326,7 +15326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &898514200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16027,7 +16027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &940874107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16728,7 +16728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1013814699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17152,7 +17152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1029812956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18426,7 +18426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1072283635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18850,7 +18850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1072901230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19580,7 +19580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1132494571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21083,7 +21083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1192139261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22143,7 +22143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2127902843}
-  distance: 5
+  distance: 8
   height: 1.5
   mouseSensitivity: 5
   rotationSmoothTime: 0.12
@@ -23194,7 +23194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1286150190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23618,7 +23618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1301651028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24042,7 +24042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1309520419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25045,7 +25045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1397087556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25571,7 +25571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1417076718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26345,7 +26345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1442276689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27122,7 +27122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1512697719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27546,7 +27546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1516360743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28174,7 +28174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1571919053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28773,7 +28773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1583470945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29299,7 +29299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1594384930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29723,7 +29723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1594635356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30147,7 +30147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1598667425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31198,7 +31198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1702422419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31797,7 +31797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1706326084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32221,7 +32221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1740418635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32750,7 +32750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1765112286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33624,7 +33624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1809834186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34345,7 +34345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1827731797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35352,7 +35352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1947815312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35980,7 +35980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &1964686909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36874,7 +36874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &2000157138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37400,7 +37400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &2019243991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38223,7 +38223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 0.2
-  speed: 2
+  speed: 3
 --- !u!114 &2037068449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39284,8 +39284,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2127902842}
-  walkSpeed: 7
-  runSpeed: 12
+  walkSpeed: 8
+  runSpeed: 14
   rotationSpeed: 10
   jumpForce: 3
   groundCheckDistance: 0.5
@@ -39583,6 +39583,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 337440993024210777, guid: 1d085bfbc08a1704f88a421333c2eb55, type: 3}
+      propertyPath: depth
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 337440993024210777, guid: 1d085bfbc08a1704f88a421333c2eb55, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4506521750258117306, guid: 1d085bfbc08a1704f88a421333c2eb55, type: 3}
       propertyPath: m_Mesh
       value: 
