@@ -9,19 +9,18 @@ public class GameFlowManager : MonoBehaviour
 
     [Header("References")]
     public LaserSpawner laserSpawner;
-    // public TileManager tileManager; 
 
     [Header("UI Objects")]
     public GameObject uiPanel;
-    public GameObject introBoxObj;       // Kotak Hitam Background
+    public GameObject introBoxObj;
 
     [Header("UI Texts")]
-    public TMP_Text stageNumberText;     // Text "STAGE 1"
-    public TMP_Text minigameNameText;    // Text "LASER EVASION"
-    public TMP_Text countdownText;       // Text "3.. 2.. 1.."
-    public TMP_Text timerText;           // Text Timer Pojok
+    public TMP_Text stageNumberText;
+    public TMP_Text minigameNameText;
+    public TMP_Text countdownText;
+    public TMP_Text timerText;
 
-    private int currentStage = 1;
+    int currentStage = 1;
 
     void Start()
     {
@@ -30,56 +29,37 @@ public class GameFlowManager : MonoBehaviour
 
     IEnumerator GameSequence()
     {
-        while (true) // Loop stage selamanya
+        while (true)
         {
-            // 1. RESET: Matikan semua game & UI
-            ResetAllMinigames();
-            introBoxObj.SetActive(false);
-            stageNumberText.gameObject.SetActive(false);
-            minigameNameText.gameObject.SetActive(false);
-            countdownText.gameObject.SetActive(false);
-            timerText.text = "";
+            ResetSystems();
 
-            // Tentukan Nama Game
+            // ===== Tentukan nama mode =====
             string gameName = "";
-            if (currentStage == 1) gameName = "LASER TAG!";
+            if (currentStage == 1) gameName = "LASER TAG";
             else if (currentStage == 2) gameName = "FALLING TILES";
-            else gameName = "SURVIVAL CHAOS";
+            else gameName = "CHAOS MODE";
 
-            // ==================================================
-            // SEQUENCE INTRO (REVISI: HILANG BARENG)
-            // ==================================================
-
-            // A. Munculkan Kotak Hitam
+            // ===== INTRO UI =====
             uiPanel.SetActive(true);
             introBoxObj.SetActive(true);
-            yield return new WaitForSeconds(0.5f);
 
-            // B. Pop Up "STAGE X"
             stageNumberText.text = "STAGE " + currentStage;
-            // Munculkan Stage, tapi JANGAN dihilangkan dulu
             yield return StartCoroutine(AnimatePopUp(stageNumberText));
 
-            yield return new WaitForSeconds(0.5f); // Jeda dikit biar gantian munculnya
+            yield return new WaitForSeconds(0.5f);
 
-            // C. Pop Up "NAMA GAME" (Muncul di bawah Stage)
             minigameNameText.text = gameName;
             yield return StartCoroutine(AnimatePopUp(minigameNameText));
 
-            // D. TAHAN (Biarkan pemain baca dua-duanya)
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(2f);
 
-            // E. HILANG BARENGAN!
             stageNumberText.gameObject.SetActive(false);
             minigameNameText.gameObject.SetActive(false);
-
-            // Tutup Kotak Hitam
             introBoxObj.SetActive(false);
 
-            // ==================================================
-            // SEQUENCE COUNTDOWN (Lanjut seperti biasa)
-            // ==================================================
+            // ===== COUNTDOWN =====
             countdownText.gameObject.SetActive(true);
+
             for (int i = 3; i > 0; i--)
             {
                 countdownText.text = i.ToString();
@@ -87,21 +67,20 @@ public class GameFlowManager : MonoBehaviour
                 yield return new WaitForSeconds(1f);
             }
 
-            countdownText.text = "GO!";
+            countdownText.text = "GO";
             StartCoroutine(AnimatePopUp(countdownText));
             yield return new WaitForSeconds(0.5f);
             countdownText.gameObject.SetActive(false);
 
-            // ==================================================
-            // GAMEPLAY MULAI
-            // ==================================================
-            ActivateMinigame(currentStage);
+            // ===== AKTIFKAN STAGE =====
+            ActivateStage(currentStage);
 
-            float timeLeft = stageDuration;
-            while (timeLeft > 0)
+            // ===== TIMER STAGE =====
+            float t = stageDuration;
+            while (t > 0)
             {
-                timeLeft -= Time.deltaTime;
-                timerText.text = Mathf.CeilToInt(timeLeft).ToString();
+                t -= Time.deltaTime;
+                timerText.text = Mathf.CeilToInt(t).ToString();
                 yield return null;
             }
 
@@ -109,55 +88,77 @@ public class GameFlowManager : MonoBehaviour
         }
     }
 
-    // --- FUNGSI ANIMASI (Sama seperti sebelumnya) ---
-    IEnumerator AnimatePopUp(TMP_Text targetText)
+    // =========================
+    // STAGE LOGIC
+    // =========================
+
+    void ActivateStage(int stage)
     {
-        targetText.gameObject.SetActive(true);
-        targetText.transform.localScale = Vector3.zero;
+        if (!laserSpawner) return;
 
-        // Tahap 1: Membesar (Pop)
-        float timer = 0;
-        float duration = 0.2f;
-        while (timer < duration)
-        {
-            timer += Time.deltaTime;
-            float scale = Mathf.Lerp(0f, 1.2f, timer / duration);
-            targetText.transform.localScale = new Vector3(scale, scale, scale);
-            yield return null;
-        }
-
-        // Tahap 2: Settling
-        timer = 0;
-        duration = 0.1f;
-        while (timer < duration)
-        {
-            timer += Time.deltaTime;
-            float scale = Mathf.Lerp(1.2f, 1f, timer / duration);
-            targetText.transform.localScale = new Vector3(scale, scale, scale);
-            yield return null;
-        }
-        targetText.transform.localScale = Vector3.one;
-    }
-
-    void ResetAllMinigames()
-    {
-        if (laserSpawner) laserSpawner.enabled = false;
-        // if (tileManager) tileManager.SetTileSystem(false);
-    }
-
-    void ActivateMinigame(int stage)
-    {
         if (stage == 1)
         {
-            if (laserSpawner) { laserSpawner.enabled = true; laserSpawner.ApplyDifficulty(2f); }
+            // Laser only
+            laserSpawner.ApplyDifficulty(2f);
+            laserSpawner.StartLaser();
+            laserSpawner.SetTileSystem(false, 0f);
         }
         else if (stage == 2)
         {
-            if (laserSpawner) { laserSpawner.enabled = true; laserSpawner.ApplyDifficulty(1.4f); }
+            // Tile only
+            laserSpawner.StopLaser();
+            laserSpawner.SetTileSystem(true, 3f);
         }
         else
         {
-            if (laserSpawner) { laserSpawner.enabled = true; laserSpawner.ApplyDifficulty(1.0f); }
+            // Laser + Tile
+            laserSpawner.ApplyDifficulty(1.0f);
+            laserSpawner.StartLaser();
+            laserSpawner.SetTileSystem(true, 2.5f);
         }
+    }
+
+    void ResetSystems()
+    {
+        if (!laserSpawner) return;
+
+        laserSpawner.StopLaser();
+        laserSpawner.SetTileSystem(false, 0f);
+
+        timerText.text = "";
+        introBoxObj.SetActive(false);
+        stageNumberText.gameObject.SetActive(false);
+        minigameNameText.gameObject.SetActive(false);
+        countdownText.gameObject.SetActive(false);
+    }
+
+    // =========================
+    // UI ANIMATION
+    // =========================
+
+    IEnumerator AnimatePopUp(TMP_Text txt)
+    {
+        txt.gameObject.SetActive(true);
+        txt.transform.localScale = Vector3.zero;
+
+        float t = 0f;
+        while (t < 0.2f)
+        {
+            t += Time.deltaTime;
+            float s = Mathf.Lerp(0f, 1.2f, t / 0.2f);
+            txt.transform.localScale = Vector3.one * s;
+            yield return null;
+        }
+
+        t = 0f;
+        while (t < 0.1f)
+        {
+            t += Time.deltaTime;
+            float s = Mathf.Lerp(1.2f, 1f, t / 0.1f);
+            txt.transform.localScale = Vector3.one * s;
+            yield return null;
+        }
+
+        txt.transform.localScale = Vector3.one;
     }
 }
