@@ -20,11 +20,26 @@ public class GameFlowManager : MonoBehaviour
     public TMP_Text countdownText;
     public TMP_Text timerText;
 
+    [Header("BGM")]
+    public AudioSource bgmSource;
+    public AudioClip bgmClip;
+
     int currentStage = 1;
 
     void Start()
     {
+        PlayBGM();
         StartCoroutine(GameSequence());
+    }
+
+    void PlayBGM()
+    {
+        if (bgmSource == null || bgmClip == null) return;
+
+        bgmSource.clip = bgmClip;
+        bgmSource.loop = true;
+        bgmSource.volume = 1f;  
+        bgmSource.Play();
     }
 
     IEnumerator GameSequence()
@@ -98,20 +113,17 @@ public class GameFlowManager : MonoBehaviour
 
         if (stage == 1)
         {
-            // Laser only
             laserSpawner.ApplyDifficulty(2f);
             laserSpawner.StartLaser();
             laserSpawner.SetTileSystem(false, 0f);
         }
         else if (stage == 2)
         {
-            // Tile only
             laserSpawner.StopLaser();
             laserSpawner.SetTileSystem(true, 3f);
         }
         else
         {
-            // Laser + Tile
             laserSpawner.ApplyDifficulty(1.0f);
             laserSpawner.StartLaser();
             laserSpawner.SetTileSystem(true, 2.5f);

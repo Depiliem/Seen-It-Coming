@@ -16,6 +16,9 @@ public class LaserSpawner : MonoBehaviour
 
     bool laserActive = false;
 
+    [Header("Audio")]
+    public AudioSource laserShootSound;   // 🔊 suara tembak laser
+
     // ======================
     // TILE SYSTEM
     // ======================
@@ -70,6 +73,15 @@ public class LaserSpawner : MonoBehaviour
 
         if (warning) Destroy(warning);
 
+        // 🔊 MAINKAN SUARA LASER
+        if (laserShootSound != null)
+        {
+            laserShootSound.volume = 0.6f;
+            laserShootSound.pitch = Random.Range(0.9f, 1.1f);
+            laserShootSound.Play();
+        }
+
+
         GameObject laser = Instantiate(laserPrefab, pos, Quaternion.identity);
         laser.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
         laser.transform.Rotate(Vector3.up, randomAngle, Space.World);
@@ -108,6 +120,7 @@ public class LaserSpawner : MonoBehaviour
     void DespawnRandomTile()
     {
         if (!tileSystemActive) return;
+
         CacheTilesIfNeeded();
         if (pathTiles.Length == 0) return;
 
@@ -124,7 +137,6 @@ public class LaserSpawner : MonoBehaviour
 
         Color original = m.color;
 
-        // 🔥 aktifkan emission
         m.EnableKeyword("_EMISSION");
 
         float t = 0f;
@@ -132,13 +144,11 @@ public class LaserSpawner : MonoBehaviour
 
         while (t < tileWarningTime)
         {
-            // nyala merah + glow
             m.color = Color.red;
             m.SetColor("_EmissionColor", Color.red * 4f);
 
             yield return new WaitForSeconds(blinkSpeed);
 
-            // balik normal + glow mati
             m.color = original;
             m.SetColor("_EmissionColor", Color.black);
 
@@ -147,7 +157,6 @@ public class LaserSpawner : MonoBehaviour
             t += blinkSpeed * 2f;
         }
 
-        // pastikan glow mati sebelum hilang
         m.SetColor("_EmissionColor", Color.black);
 
         tile.SetActive(false);
@@ -156,11 +165,9 @@ public class LaserSpawner : MonoBehaviour
 
         tile.SetActive(true);
 
-        // restore warna + emission off
         m.color = original;
         m.SetColor("_EmissionColor", Color.black);
     }
-
 
     public void SetTileSystem(bool active, float newTileInterval)
     {
