@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5006560091377022042}
   - component: {fileID: 4556061147966712834}
   m_Layer: 0
-  m_Name: LaserWarning
+  m_Name: laserWarning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 3.85, y: 1.09, z: 0}
-  m_LocalScale: {x: 1, y: 9.84, z: 1}
+  m_LocalScale: {x: 0.5, y: 55, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
